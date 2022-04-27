@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Before running application"
+cp /tmp/artifacts/*.jar /deployments
+cp /tmp/artifacts/lib/jh-cmn-ridesvc-runner.jar /deployments/lib
+find /deployments
+echo "Starting the run"
+exec /usr/local/s2i/run
