@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Before running application"
-cp /tmp/artifacts/*.jar /deployments
-cp /tmp/artifacts/lib/jh-cmn-ridesvc-runner.jar /deployments/lib
+cp /tmp/artifacts/spring-petclinic-2.6.0-SNAPSHOT.jar /deployments
+cp /tmp/artifacts/agent/splunk-otel-javaagent.jar /deployments/agent
 find /deployments
 echo "Starting the run"
 exec /usr/local/s2i/run
