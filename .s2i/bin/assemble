@@ -15,10 +15,10 @@ source "${JBOSS_CONTAINER_JAVA_S2I_MODULE}/maven-s2i-overrides"
 maven_s2i_build
 
 ### cp /tmp/target/*.jar /tmp/artifacts
-cp /tmp/src/target/spring-petclinic-2.6.0-SNAPSHOT.jar /tmp/artifacts
+cp /tmp/src/target/*.jar /tmp/artifacts
 
 mkdir /tmp/artifacts/agent
-cp /tmp/src/src/agent/splunk-otel-javaagent.jar /tmp/artifacts/agent
+cp /tmp/src/src/agent/*.jar /tmp/artifacts/agent
 
 # remove source files
 rm -rf /tmp/src
