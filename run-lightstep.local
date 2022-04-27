@@ -1,0 +1,4 @@
+export LS_ACCESS_TOKEN=BMG4yqfXcvYMzkw2y0JvJlQMK+OcaKq8s8ZCrfrPF22MQiIfJ5wu8zH9586/UxuqjHMEur7bunxgxYBxqjnYN9BFNxYV51xIn4xUapMv
+export LS_SERVICE_NAME=otel
+
+java -javaagent:lib/lightstep-opentelemetry-javaagent.jar -jar target/spring-petclinic-2.6.0-SNAPSHOT.jar

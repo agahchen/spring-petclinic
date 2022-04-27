@@ -1,0 +1,9 @@
+export OTEL_SERVICE_NAME='otel' 
+export OTEL_RESOURCE_ATTRIBUTES='deployment.environment=dev' 
+export OTEL_EXPORTER_OTLP_ENDPOINT='http://<GATEWAY_IP>:4317'
+
+# java -javaagent:./splunk-otel-javaagent.jar -Dsplunk.profiler.enabled=true -Dsplunk.metrics.enabled=true -Dsplunk.metrics.endpoint='http://<GATEWAY_IP>:9943' \ -jar myapp.jar
+
+# java -javaagent:./lib/splunk-otel-javaagent.jar -Dsplunk.profiler.enabled=true -Dsplunk.metrics.enabled=true -Dsplunk.metrics.endpoint='http://<GATEWAY_IP>:9943' -jar target/spring-petclinic-*-SNAPSHOT.jar \ --spring.profiles.active=mysql
+
+java -javaagent:./lib/splunk-otel-javaagent.jar -Dsplunk.profiler.enabled=true -Dsplunk.metrics.enabled=true -jar target/spring-petclinic-*-SNAPSHOT.jar \ --spring.profiles.active=mysql
