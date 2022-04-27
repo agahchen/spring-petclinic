@@ -14,7 +14,7 @@ source "${JBOSS_CONTAINER_JAVA_S2I_MODULE}/maven-s2i-overrides"
 # invoke the build
 maven_s2i_build
 
-cp /tmp/target/*.jar /tmp/artifacts
+### cp /tmp/target/*.jar /tmp/artifacts
 cp -r /tmp/lib /tmp/artifacts
 
 # remove source files
