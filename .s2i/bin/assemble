@@ -19,7 +19,7 @@ echo `env`
 echo "----"
 
 echo "List /tmp folders and files"
-echo `ls -R`
+echo `ls -R /tmp/src`
 echo "----"
 
 ### cp /tmp/target/*.jar /tmp/artifacts
