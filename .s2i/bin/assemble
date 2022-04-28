@@ -14,19 +14,15 @@ source "${JBOSS_CONTAINER_JAVA_S2I_MODULE}/maven-s2i-overrides"
 # invoke the build
 maven_s2i_build
 
-echo "List environment variables"
-echo `env`
-echo "----"
-
 echo "List /tmp folders and files"
-echo `ls -R /tmp/src`
+echo `ls -R /tmp`
 echo "----"
 
 ### cp /tmp/target/*.jar /tmp/artifacts
-cp /tmp/src/target/*.jar /tmp/artifacts
+## cp /tmp/src/target/*.jar /tmp/artifacts
 
-mkdir /tmp/artifacts/agent
-cp /tmp/src/src/agent/*.jar /tmp/artifacts/agent
+## mkdir /tmp/artifacts/agent
+## cp /tmp/src/src/agent/*.jar /tmp/artifacts/agent
 
 # remove source files
-rm -rf /tmp/src
+## rm -rf /tmp/src
