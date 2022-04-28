@@ -1,6 +1,6 @@
-export OTEL_SERVICE_NAME='otel' 
+export OTEL_SERVICE_NAME='dev_otel' 
 export OTEL_RESOURCE_ATTRIBUTES='deployment.environment=dev' 
-export OTEL_EXPORTER_OTLP_ENDPOINT='http://<GATEWAY_IP>:4317'
+export OTEL_EXPORTER_OTLP_ENDPOINT='http://malbec.dmz:4317'
 
 # java -javaagent:./splunk-otel-javaagent.jar -Dsplunk.profiler.enabled=true -Dsplunk.metrics.enabled=true -Dsplunk.metrics.endpoint='http://<GATEWAY_IP>:9943' \ -jar myapp.jar
 

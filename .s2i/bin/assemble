@@ -14,6 +14,14 @@ source "${JBOSS_CONTAINER_JAVA_S2I_MODULE}/maven-s2i-overrides"
 # invoke the build
 maven_s2i_build
 
+echo "List environment variables"
+echo `env`
+echo "----"
+
+echo "List /tmp folders and files"
+echo `ls -R`
+echo "----"
+
 ### cp /tmp/target/*.jar /tmp/artifacts
 cp /tmp/src/target/*.jar /tmp/artifacts
 
