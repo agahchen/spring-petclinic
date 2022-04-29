@@ -1,13 +1,13 @@
 #!/bin/bash
 echo "Before assembling"
 
-/usr/libexec/s2i/assemble
+echo "MAVEN_S2I_ARTIFACT_DIRS='${MAVEN_S2I_ARTIFACT_DIRS}'"
+
+/usr/local/s2i/assemble
 rc=$?
 
 if [ $rc -eq 0 ]; then
     echo "After successful assembling"
-
-    echo "MAVEN_S2I_ARTIFACT_DIRS='${MAVEN_S2I_ARTIFACT_DIRS}'"
 
     mkdir /deployments/agent
 else
