@@ -3,4 +3,4 @@
 JAVA_OPTS="-verbose:class"
 
 echo "Before running application"
-exec /local/s2i/run
+exec /usr/local/s2i/run
