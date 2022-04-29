@@ -3,13 +3,14 @@ echo "Before assembling"
 
 echo "MAVEN_S2I_ARTIFACT_DIRS='${MAVEN_S2I_ARTIFACT_DIRS}'"
 
+mkdir /deployments/agent
+cp /tmp/src/agent/*.jar /deployments/agent
+
 /usr/local/s2i/assemble
 rc=$?
 
 if [ $rc -eq 0 ]; then
     echo "After successful assembling"
-
-    mkdir /deployments/agent
 else
     echo "After failed assembling"
 fi
