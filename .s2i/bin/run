@@ -1,7 +1,6 @@
 #!/bin/bash
+
+JAVA_OPTS="-verbose:class"
+
 echo "Before running application"
-cp /tmp/artifacts/spring-petclinic-2.6.0-SNAPSHOT.jar /deployments
-cp /tmp/artifacts/agent/splunk-otel-javaagent.jar /deployments/agent
-find /deployments
-echo "Starting the run"
-exec /usr/local/s2i/run
+exec /usr/libexec/s2i/run

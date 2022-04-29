@@ -1,28 +1,17 @@
-#!/bin/sh
+#!/bin/bash
+echo "Before assembling"
 
-set -e
+/usr/libexec/s2i/assemble
+rc=$?
 
-source "${JBOSS_CONTAINER_UTIL_LOGGING_MODULE}/logging.sh"
-source "${JBOSS_CONTAINER_MAVEN_S2I_MODULE}/maven-s2i"
+if [ $rc -eq 0 ]; then
+    echo "After successful assembling"
 
-# include our s2i_core_*() overrides/extensions
-source "${JBOSS_CONTAINER_JAVA_S2I_MODULE}/s2i-core-hooks"
+    echo "MAVEN_S2I_ARTIFACT_DIRS='${MAVEN_S2I_ARTIFACT_DIRS}'"
 
-# inject our overridden maven_s2i_*() functions
-source "${JBOSS_CONTAINER_JAVA_S2I_MODULE}/maven-s2i-overrides"
+    mkdir /deployments/agent
+else
+    echo "After failed assembling"
+fi
 
-# invoke the build
-maven_s2i_build
-
-echo "List /tmp folders and files"
-echo `ls -R /tmp`
-echo "----"
-
-### cp /tmp/target/*.jar /tmp/artifacts
-## cp /tmp/src/target/*.jar /tmp/artifacts
-
-## mkdir /tmp/artifacts/agent
-## cp /tmp/src/src/agent/*.jar /tmp/artifacts/agent
-
-# remove source files
-## rm -rf /tmp/src
+exit $rc
