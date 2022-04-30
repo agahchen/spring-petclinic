@@ -1,6 +1,4 @@
 #!/bin/bash
 
-JAVA_OPTS="-verbose:class"
-
 echo "Before running application"
 exec /usr/local/s2i/run

@@ -9,4 +9,4 @@ export OTEL_EXPORTER_OTLP_ENDPOINT='https://malbec.dmz:4317'
 
 # java -javaagent:./lib/splunk-otel-javaagent.jar -Dsplunk.profiler.enabled=true -Dsplunk.metrics.enabled=true -Dsplunk.metrics.endpoint='http://<GATEWAY_IP>:9943' -jar target/spring-petclinic-*-SNAPSHOT.jar \ --spring.profiles.active=mysql
 
-java -javaagent:./lib/splunk-otel-javaagent.jar -Dsplunk.profiler.enabled=true -Dsplunk.metrics.enabled=true -jar target/spring-petclinic-*-SNAPSHOT.jar \ --spring.profiles.active=mysql
+java -javaagent:./agent/splunk-otel-javaagent.jar -Dsplunk.profiler.enabled=true -Dsplunk.metrics.enabled=true -jar target/spring-petclinic-*-SNAPSHOT.jar \ --spring.profiles.active=mysql

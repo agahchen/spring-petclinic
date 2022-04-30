@@ -3,10 +3,8 @@ echo "Before assembling"
 
 echo "MAVEN_S2I_ARTIFACT_DIRS='${MAVEN_S2I_ARTIFACT_DIRS}'"
 
-echo "ls -R ."
-
 mkdir /deployments/agent
-cp /tmp/src/* /deployments/agent
+cp /tmp/src/agent/*.jar /deployments/agent
 
 /usr/local/s2i/assemble
 rc=$?
